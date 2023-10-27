@@ -5,24 +5,14 @@ const { addDataToDB, addSolarDataToDB } = require("./function");
 const app = express();
 const port = process.env.PORT || 3000;
 
-// const JudgeRouter = require("./routes/judge");
-// const TeamRouter = require("./routes/teams");
-// const ParameterRouter = require("./routes/parameters");
-// const ScoreRouter = require("./routes/score");
-// const CompetitionRouter = require("./routes/competition");
-// const ResultRouter = require("./routes/result");
+const regionRouter = require("./routes/region");
 
 // const { notFound } = require("./middleware/notFound");
 
 app.use(express.json());
 
 // Routes
-// app.use("/api/v1/judge", JudgeRouter);
-// app.use("/api/v1/team", TeamRouter);
-// app.use("/api/v1/parameter", ParameterRouter);
-// app.use("/api/v1/score", ScoreRouter);
-// app.use("/api/v1/competition", CompetitionRouter);
-// app.use("/api/v1/result", ResultRouter);
+app.use("/api/region", regionRouter);
 
 // app.use(notFound);
 

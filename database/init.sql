@@ -14,6 +14,7 @@ CREATE TABLE EV (
 
 
 CREATE TABLE solar (
+  id SERIAL PRIMARY KEY,
   InstallationID VARCHAR(20),
   InstallationType VARCHAR(50),
   PanelType VARCHAR(50),
