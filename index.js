@@ -32,7 +32,7 @@ const start = async () => {
     console.log("Database connected successfully");
 
     // await addDataToDB();
-    await addSolarDataToDB();
+    // await addSolarDataToDB();
 
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
