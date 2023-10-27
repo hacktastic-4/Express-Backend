@@ -32,4 +32,16 @@ const regionWiseNumericResult = async (req, res) => {
   }
 };
 
-module.exports = { regionWiseResult, regionWiseNumericResult };
+const uniqueRegions = async (req, res) => {
+  try {
+    const query = `
+    select distinct region from solar;
+    `;
+    let response = await queryDatabase(query);
+    res.status(200).json({ status: true, response });
+  } catch (error) {
+    res.status(500).json({ status: false, error });
+  }
+};
+
+module.exports = { regionWiseResult, regionWiseNumericResult, uniqueRegions };
