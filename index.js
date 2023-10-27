@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 
 const regionRouter = require("./routes/region");
 const globalRouter = require("./routes/global");
+const evRegionRouter = require("./routes/evRegion");
 
 // const { notFound } = require("./middleware/notFound");
 
@@ -15,6 +16,7 @@ app.use(express.json());
 // Routes
 app.use("/api/region", regionRouter);
 app.use("/api/global", globalRouter);
+app.use("/api/evRegion", evRegionRouter);
 
 // app.use(notFound);
 
