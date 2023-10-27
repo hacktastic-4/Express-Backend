@@ -1,6 +1,6 @@
 const express = require("express");
 const queryDatabase = require("./database/connect");
-const addDataToDB = require("./function");
+const { addDataToDB, addSolarDataToDB } = require("./function");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -32,6 +32,7 @@ const start = async () => {
     console.log("Database connected successfully");
 
     // await addDataToDB();
+    await addSolarDataToDB();
 
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
