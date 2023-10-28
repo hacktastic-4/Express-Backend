@@ -10,7 +10,7 @@ const regionWiseResult = async (req, res) => {
         `;
 
     let response = await queryDatabase(query);
-    res.status(200).json({ status: true, response });
+    res.status(200).json({ status: true,label: `Count by Region of respective category`, response });
   } catch (error) {
     res.status(500).json({ status: false, error });
   }
@@ -26,7 +26,7 @@ const regionWiseNumericResult = async (req, res) => {
           `;
 
     let response = await queryDatabase(query);
-    res.status(200).json({ status: true, response });
+    res.status(200).json({ status: true, label: `Average ${numeric} -- ${category} and Region: ${region}`,response });
   } catch (error) {
     res.status(500).json({ status: false, error });
   }
@@ -38,7 +38,7 @@ const uniqueRegions = async (req, res) => {
     select distinct region from solar;
     `;
     let response = await queryDatabase(query);
-    res.status(200).json({ status: true, response });
+    res.status(200).json({ status: true,label: `Unique Regions`, response });
   } catch (error) {
     res.status(500).json({ status: false, error });
   }

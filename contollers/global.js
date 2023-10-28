@@ -9,7 +9,7 @@ const region = async (req, res) => {
         `;
 
     let response = await queryDatabase(query);
-    res.status(200).json({ status: true, response });
+    res.status(200).json({ status: true, label: `Count -- Region`, response });
   } catch (error) {
     res.status(500).json({ status: false, error });
   }
@@ -25,7 +25,7 @@ const categoryWiseResult = async (req, res) => {
           `;
 
     let response = await queryDatabase(query);
-    res.status(200).json({ status: true, response });
+    res.status(200).json({ status: true,label: `Count -- ${category}`,  response });
   } catch (error) {
     res.status(500).json({ status: false, error });
   }
@@ -41,7 +41,7 @@ const categoryWiseNumericResult = async (req, res) => {
             `;
 
     let response = await queryDatabase(query);
-    res.status(200).json({ status: true, response });
+    res.status(200).json({ status: true, label: `Average Cost -- ${category}`,response });
   } catch (error) {
     res.status(500).json({ status: false, error });
   }

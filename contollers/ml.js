@@ -40,4 +40,16 @@ const singleUserIdData = async (req, res) => {
   }
 };
 
-module.exports = { optimization, singleUserIdData };
+const forecast = async (req, res) => {
+  const array = req.query.attributes;
+  axios
+    .get(`http://127.0.0.1:5000/ml/forecast?attributes=${array}`)
+    .then((response) => {
+      res.status(200).json({ status: true, response: response.data });
+    })
+    .catch((error) => {
+      console.log({ status: false, error });
+    });
+};
+
+module.exports = { optimization, singleUserIdData, forecast };
