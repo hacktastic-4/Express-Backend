@@ -140,11 +140,11 @@ Example response:
 }
 ```
 
-# 3)
+# 5)
 ```bash
-/api/global/:category/:numeric
+/api/:region/:category/:numeric
 ```
-This endpoint returns the average value of a specific numeric type for a specific category. The numeric type can be one of the following:
+This endpoint returns the average value of a specific numeric type for a specific category and region. The numeric type can be one of the following:
 
 - cost
 - capacity
@@ -154,7 +154,7 @@ This endpoint returns the average value of a specific numeric type for a specifi
 - annualsavings
 - Example request:
 ```bash
-GET /api/global/installationtype/cost
+GET /api/region/Karnataka/installationtype/annualsavings
 ```
 
 Example response:
@@ -162,18 +162,19 @@ Example response:
 ```JSON
 {
   "status": true,
+  "label": "Average annualsavings -- installationtype and Region: Karnataka",
   "response": [
     {
       "installationtype": "Residential",
-      "average": "28978.395785876993"
+      "average": "19243.766336633663"
     },
     {
       "installationtype": "Industrial",
-      "average": "98838.955351681957"
+      "average": "74485.000000000000"
     },
     {
       "installationtype": "Commercial",
-      "average": "65492.826086956522"
+      "average": "56224.518518518519"
     }
   ]
 }
