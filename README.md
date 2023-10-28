@@ -28,21 +28,22 @@ Example response:
   ]
 }
 ```
-Use code with caution. Learn more
-
+```bash
 /api/global/:category
+```
 This endpoint returns the total number of entries for a specific category. The category can be one of the following:
 
-installationtype
-paneltype
-typeinstallation
-installername
+- installationtype
+- paneltype
+- typeinstallation
+- installername
 Example request:
-
+```bash
 GET /api/global/installationtype
+```
 Example response:
 
-JSON
+```JSON
 {
   "status": true,
   "response": [
@@ -60,23 +61,26 @@ JSON
     }
   ]
 }
-Use code with caution. Learn more
-
+```
+```bash
 /api/global/:category/:numeric
+```
 This endpoint returns the average value of a specific numeric type for a specific category. The numeric type can be one of the following:
 
-cost
-capacity
-energyproduced
-maintainancefrequency
-warrantyyears
-annualsavings
-Example request:
-
+- cost
+- capacity
+- energyproduced
+- maintainancefrequency
+- warrantyyears
+- annualsavings
+- Example request:
+```bash
 GET /api/global/installationtype/cost
+```
+
 Example response:
 
-JSON
+```JSON
 {
   "status": true,
   "response": [
@@ -94,7 +98,7 @@ JSON
     }
   ]
 }
-Use code with caution. Learn more
+```
 
 Usage
 To use the API, simply send a GET request to the appropriate endpoint, with any required parameters. The API will return a JSON response with the requested data.
