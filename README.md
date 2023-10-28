@@ -179,3 +179,25 @@ Example response:
   ]
 }
 ```
+# 6)
+```bash
+GET /api/ml/optimization/:id
+```
+Utilizes machine learning to optimize independent variables for a specific user identified by :id.
+
+# 7)
+```bash
+GET /api/ml/forecast?attributes=[2,0,5,600,12,50000,4,1,2,25]
+```
+Utilizes machine learning to predict annual savings based upon installation 
+- installationtype
+- paneltype
+- typeinstallation
+- installername
+-  cost
+- capacity
+- maintainancefrequency
+- warrantyyears
+
+
+
