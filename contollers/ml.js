@@ -27,4 +27,17 @@ const optimization = async (req, res) => {
   }
 };
 
-module.exports = { optimization };
+const singleUserIdData = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const query = `
+            select * from solar where id=${id};
+            `;
+    let response = await queryDatabase(query);
+    res.status(200).json({ status: true, response });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { optimization, singleUserIdData };
