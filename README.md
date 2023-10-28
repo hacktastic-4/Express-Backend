@@ -185,6 +185,51 @@ GET /api/ml/optimization/:id
 ```
 Utilizes machine learning to optimize independent variables for a specific user identified by :id.
 
+```JSON
+{
+  {
+  "status": true,
+  "response": [
+    {
+      "id": 414,
+      "installationid": "S007",
+      "installationtype": "Residential",
+      "paneltype": "Thin Film",
+      "capacity": 14,
+      "energyproduced": 1308,
+      "maintenancefrequency": 6,
+      "cost": 74449,
+      "region": "Uttar Pradesh",
+      "latitude": 10.8505,
+      "longitude": 71.6446,
+      "typeofinstallation": "Roof Mounted",
+      "installername": "SunWave Ltd",
+      "warrantyyears": 24,
+      "annualsavings": 150000
+    },
+    {
+      "id": 727,
+      "installationid": "S006",
+      "installationtype": "Residential",
+      "paneltype": "Monocrystalline",
+      "capacity": 100,
+      "energyproduced": 1981,
+      "maintenancefrequency": 6,
+      "cost": 56000,
+      "region": "Rajasthan",
+      "latitude": 10.8505,
+      "longitude": 79.0638,
+      "typeofinstallation": "Ground Mounted",
+      "installername": "GreenEnergy Co",
+      "warrantyyears": 23,
+      "annualsavings": 146722
+    }
+  ]
+}
+}
+}
+```
+
 # 7)
 ```bash
 GET /api/ml/forecast?attributes=[2,0,5,600,12,50000,4,1,2,25]
@@ -199,5 +244,14 @@ Utilizes machine learning to predict annual savings based upon installation
 - maintainancefrequency
 - warrantyyears
 
+Example response:
 
-
+```JSON
+{
+  "status": true,
+  "response": {
+  "response": 112276,
+  "status": 200
+}
+}
+```
