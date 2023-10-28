@@ -185,6 +185,11 @@ GET /api/ml/optimization/:id
 ```
 Utilizes machine learning to optimize independent variables for a specific user identified by :id.
 
+Example input
+```bash
+GET /api/ml/optimization/45
+```
+
 ```JSON
 {
   {
@@ -225,8 +230,7 @@ Utilizes machine learning to optimize independent variables for a specific user 
       "annualsavings": 146722
     }
   ]
-}
-}
+  }
 }
 ```
 
@@ -252,6 +256,6 @@ Example response:
   "response": {
   "response": 112276,
   "status": 200
-}
+  }
 }
 ```
