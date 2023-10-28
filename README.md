@@ -1,6 +1,7 @@
 This API provides endpoints for retrieving global data on solar installations, categorized by region, installation type, panel type, type of installation, installer name, cost, capacity, energy produced, maintenance frequency, warranty years, and annual savings.
 
 # Endpoints
+# 1)
 ```bash
 /api/global
 ```
@@ -28,6 +29,7 @@ Example response:
   ]
 }
 ```
+# 2)
 ```bash
 /api/global/:category
 ```
@@ -62,6 +64,8 @@ Example response:
   ]
 }
 ```
+
+# 3)
 ```bash
 /api/global/:category/:numeric
 ```
@@ -99,32 +103,78 @@ Example response:
   ]
 }
 ```
+# 4)
+```bash
+/api/:region/:category
+```
+This endpoint returns the total number of entries for a specific region and category. The category can be one of the following:
 
-Usage
-To use the API, simply send a GET request to the appropriate endpoint, with any required parameters. The API will return a JSON response with the requested data.
+- installationtype
+- paneltype
+- typeinstallation
+- installername
+Example request:
+```bash
+GET /api/Karnataka/installationtype
+```
+Example response:
 
-Example
-
-To retrieve the total number of solar installations in Telangana, you would send the following GET request:
-
-GET /api/global/Telangana
-The API would return the following JSON response:
-
-JSON
+```JSON
 {
   "status": true,
-  "label": "Count -- Region",
+  "label": "Count by Region of respective category",
   "response": [
     {
-      "region": "Telangana",
-      "regioncount": "520"
+      "installationtype": "Residential",
+      "categorycount": "505"
+    },
+    {
+      "installationtype": "Industrial",
+      "categorycount": "89"
+    },
+    {
+      "installationtype": "Commercial",
+      "categorycount": "108"
     }
   ]
 }
-Use code with caution. Learn more
+```
 
-Authentication
-The API is currently public and does not require authentication.
+# 3)
+```bash
+/api/global/:category/:numeric
+```
+This endpoint returns the average value of a specific numeric type for a specific category. The numeric type can be one of the following:
 
-Support
-If you have any questions or problems using the API, please contact us at [email protected]
+- cost
+- capacity
+- energyproduced
+- maintainancefrequency
+- warrantyyears
+- annualsavings
+- Example request:
+```bash
+GET /api/global/installationtype/cost
+```
+
+Example response:
+
+```JSON
+{
+  "status": true,
+  "response": [
+    {
+      "installationtype": "Residential",
+      "average": "28978.395785876993"
+    },
+    {
+      "installationtype": "Industrial",
+      "average": "98838.955351681957"
+    },
+    {
+      "installationtype": "Commercial",
+      "average": "65492.826086956522"
+    }
+  ]
+}
+```
