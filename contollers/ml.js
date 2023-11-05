@@ -7,7 +7,7 @@ const optimization = async (req, res) => {
     id = parseInt(id);
 
     axios
-      .get(`http://127.0.0.1:5000/ml/optimize/${id}`)
+      .get(`https://mindspark-23-ml.onrender.com/ml/optimize/${id}`)
       .then((response) => {
         let data = response.data;
         let solarArray = data.response;
@@ -43,7 +43,7 @@ const singleUserIdData = async (req, res) => {
 const forecast = async (req, res) => {
   const array = req.query.attributes;
   axios
-    .get(`http://127.0.0.1:5000/ml/forecast?attributes=${array}`)
+    .get(`https://mindspark-23-ml.onrender.com/ml/forecast?attributes=${array}`)
     .then((response) => {
       res.status(200).json({ status: true, response: response.data });
     })
