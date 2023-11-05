@@ -9,7 +9,7 @@ async function queryDatabase(query, params = []) {
     database: process.env.DATABASE_DATABASE,
     password: process.env.DATABASE_PASSWORD,
     port: Number(process.env.DATABASE_PORT),
-    // ssl: true,
+    ssl: true,
   });
 
   try {
