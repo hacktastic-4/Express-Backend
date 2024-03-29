@@ -10,6 +10,7 @@ const regionRouter = require("./routes/region");
 const globalRouter = require("./routes/global");
 const evRegionRouter = require("./routes/evRegion");
 const mlRouter = require("./routes/ml");
+const productRecommendationRouter = require("./routes/productRecommendation");
 
 // const { notFound } = require("./middleware/notFound");
 
@@ -28,6 +29,7 @@ app.use("/api/region", regionRouter);
 app.use("/api/global", globalRouter);
 app.use("/api/evRegion", evRegionRouter);
 app.use("/api/ml", mlRouter);
+app.use("/api/productRecommendation", productRecommendationRouter);
 
 // app.use(notFound);
 
