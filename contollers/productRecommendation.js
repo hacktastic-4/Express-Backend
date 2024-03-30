@@ -52,6 +52,7 @@ const integrate = (req, res) => {
     treesAdded,
     anualSavingAmount,
     lifeTimeSavingAmount,
+    avgEnergyCostKwh,
   });
 };
 const calculateCombinations = (required_power) => {
